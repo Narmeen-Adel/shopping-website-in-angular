@@ -1,0 +1,16 @@
+<div class="card" style="width: 18rem;">
+  <div class="item" (click)="displaySingleProduct(product_item)">
+     <img class="card-img-top" src={{product_item.ProductPicUrl}} alt="Card image cap">
+  </div>
+ <div class="card-body">
+      
+      <!-- <p >{{product_item.Description}}</p> -->
+      <p class="card-text">{{product_item.Name}}</p>
+      <p >{{product_item.Price}}</p>
+      <div (click)="addToCard(product_item)" class="col-sm-5" >
+        <img  class="col-sm-12" src="../../../assets/images/images.png" alt="icon add to card">
+      </div>
+    
+
+    </div>
+</div>
