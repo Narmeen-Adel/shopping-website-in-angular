@@ -17,7 +17,12 @@
         Dropdown link
       </a>
       <div class="dropdown-menu">
-        <a *ngFor ="let item of cardArray" class="dropdown-item" >{{item}}</a>
+        <a *ngFor ="let item of cardArray" class="dropdown-item" >
+          <span class="col-sm-4">
+            {{item.Name}}
+          </span>
+          <i  class="btn-danger"(click)="deleteFromCard(item)"class="col-sm-6" class="fas fa-times"></i>
+        </a>
         <!-- <a class="dropdown-item" >Link 2</a>
         <a class="dropdown-item" >Link 3</a> -->
       </div>

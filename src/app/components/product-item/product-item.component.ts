@@ -9,7 +9,10 @@ import {StreamService} from '../../services/stream.service';
 export class ProductItemComponent implements OnInit {
   //product_item :ProductModel;
   @Input() product_item :ProductModel;
-  constructor(private stream:StreamService) { }
+  constructor(private stream:StreamService) {  
+    this.stream.getcards().subscribe(res=>console.log(res));
+  }
+  
 
   ngOnInit() {
   }
@@ -17,6 +20,7 @@ export class ProductItemComponent implements OnInit {
       console.log(item);
   }
   addToCard(item:ProductModel){
+    this.stream.addToCard(item);
     console.log(item);
   }
 

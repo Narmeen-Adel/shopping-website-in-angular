@@ -1,4 +1,5 @@
 export interface ProductModel {
+    ProductId:string;
     Category: string;
     Description: string;
     Name:string;

@@ -9,13 +9,16 @@ import { StreamService }from '../../services/stream.service';
 export class NavComponent implements OnInit {
    public cardArray;
    constructor(private stream:StreamService) { 
-      this.stream.getcards().subscribe(res => {console.log(res);
+      this.stream.getcards().subscribe(res => {//console.log(res);
       this.cardArray=res;
       });
    }
 
-
+   
   ngOnInit() {
+  }
+  deleteFromCard(item){
+    this.stream.removeFromCard(item);
   }
 
 }
