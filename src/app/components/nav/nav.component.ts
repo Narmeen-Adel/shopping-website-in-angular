@@ -1,5 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { StreamService }from '../../services/stream.service';
+import { CardService } from '../../services/card.service';
+import { Router } from '@angular/router';
  
 @Component({
   selector: 'app-nav',
@@ -7,10 +9,14 @@ import { StreamService }from '../../services/stream.service';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
+   public wishArray;
    public cardArray;
-   constructor(private stream:StreamService) { 
+   constructor(private stream:StreamService,private shop :CardService,private router:Router) { 
       this.stream.getcards().subscribe(res => {//console.log(res);
-      this.cardArray=res;
+        this.wishArray=res;
+      });
+      this.shop.getcards().subscribe(res=>{
+        this.cardArray=res;
       });
    }
 
@@ -18,7 +24,14 @@ export class NavComponent implements OnInit {
   ngOnInit() {
   }
   deleteFromCard(item){
+    this.shop.removeFromCard(item);
+  }
+  deleteFromWishList(item){
     this.stream.removeFromCard(item);
+
   }
 
+  navigateTo(path:string){
+    this.router.navigate([path]);
+  }
 }

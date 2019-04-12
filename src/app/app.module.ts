@@ -18,7 +18,10 @@ import { ProductsComponent } from './components/products/products.component';
 import { HttpService } from   './services/http.service';
 import { NavComponent } from './components/nav/nav.component';
 import { SingleProductComponent } from './components/single-product/single-product.component';
-
+import {StreamService} from './services/stream.service';
+import { CardPageComponent } from './components/card-page/card-page.component';
+import { RegisterComponent } from './components/register/register.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,18 +32,19 @@ import { SingleProductComponent } from './components/single-product/single-produ
     ProductItemComponent,
     ProductsComponent,
     NavComponent,
-    SingleProductComponent
+    SingleProductComponent,
+    CardPageComponent,
+    RegisterComponent,
+    NotFoundComponent,
+   
   ],
   imports: [
     BrowserModule,
-    // BsDropdownModule.forRoot(),
-    // TooltipModule.forRoot(),
-    // ModalModule.forRoot(),
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [HttpService],
+  providers: [HttpService,StreamService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

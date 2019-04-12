@@ -1,0 +1,38 @@
+<div class="container login-container" class="m-auto">
+  <div class="row">
+      <div class="col-md-6 login-form-1 m-auto">
+          <h3>Login Form </h3>
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+            
+            <div class="form-group">
+                <input type="text" name="name"  class="form-control" formControlName="name">
+            </div>
+            <span *ngIf="loginForm.touched && !loginForm.controls.name.valid">
+                first name is required with min length 5
+              </span>
+              <div class="form-group">
+                  <input type="email" name="email"   class="form-control" formControlName="email">
+              </div>
+              <span *ngIf="loginForm.touched && !loginForm.controls.email.valid">
+                first name is required with min length 5
+              </span>
+              <div class="form-group">
+                  <input type="password"  class="form-control" name="password" formControlName="password">
+              </div>
+              <span *ngIf="loginForm.touched && !loginForm.controls.password.valid">
+                first name is required with min length 5
+              </span>
+              <div class="form-group">
+                  <button type="submit" class="btnSubmit btn btn-primary" value ="login" name= "submit" >Register</button>
+                  <button (click) ="navigateTo('/login')" class="btnSubmit btn btn-warning" value ="login" name= "submit" >Login</button>
+
+                </div>
+              <div class="form-group">
+              
+              </div>
+
+       </form>
+      </div>
+  </div>
+</div>
+      

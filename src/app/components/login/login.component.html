@@ -1,38 +1,31 @@
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-  
-  <label>
-    <app-input [type]="'email'" [name]="'email'"  formControlName="email"></app-input>
-  </label>
 
 
-  <label>
-    <app-input [type]="'password'" [name]="'password'" formControlName="password"></app-input>
-  </label>
-
-  <app-submit ></app-submit>
-
-</form>
-
-
-<div class="container login-container">
+<div class="container login-container" >
             <div class="row">
-                <div class="col-md-6 login-form-1">
+                <div class="col-md-6 login-form-1" class="m-auto">
                     <h3>Login Form 1</h3>
-                    
+                    <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+                      
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Email *" value="" />
+                            <input type="email"  formControlName="email">
                         </div>
+                        <span *ngIf="loginForm.touched && !loginForm.controls.email.valid">
+                            email is required 
+                          </span>
+
                         <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Your Password *" value="" />
+                            <input type="password"  class="form-control" name="password" formControlName="password">
                         </div>
+                        <span *ngIf="loginForm.touched && !loginForm.controls.password.valid">
+                            password is required with min length 8
+                          </span>
+
                         <div class="form-group">
-                            <input type="submit" class="btnSubmit" value="Login" />
+                            <button type="submit" class="btnSubmit btn-primary" name= "submit" > Login </button>
                         </div>
-                        <div class="form-group">
-                            <a href="#" class="btnForgetPwd">Forget Password?</a>
-                        </div>
-                 
+                       
+                 </form>
                 </div>
             </div>
  </div>
-               
+                
