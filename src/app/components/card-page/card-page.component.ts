@@ -17,5 +17,10 @@ export class CardPageComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  deleteFromCard(item){
+    this.shop.removeFromCard(item);
+    this.shop.getcards().subscribe(res=>{
+      this.cardArray=res;
+    });
+  }
 }

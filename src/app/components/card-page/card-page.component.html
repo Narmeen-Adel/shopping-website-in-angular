@@ -1,14 +1,16 @@
-
+<app-nav></app-nav>
 <br><br><br>
 <h3> Cards</h3>
 <table class="table">
-    <!-- <caption>List of users</caption> -->
+    <caption>List of Product</caption>
     <thead>
       <tr>
         
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Action</th>
+
       </tr>
     </thead>
     <tbody>
@@ -18,8 +20,15 @@
              
                <tr *ngFor="let ele of cardArray"scope="row">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
                 <td>{{ele.Name}}</td>
-                <td>{{ele.Price}}</td>
+                <td>{{ele.Price}} $</td>
                 <td>{{ele.Count}}</td>
+                <td (click)="deleteFromCard(ele)">
+                  <button   class="btn-danger">Delete
+                    <i class="col-sm-3" class="fas fa-times"></i>
+                  </button>
+                  
+
+                </td>
               </tr>
          
      
