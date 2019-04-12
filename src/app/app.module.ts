@@ -36,6 +36,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     CardPageComponent,
     RegisterComponent,
     NotFoundComponent,
+  
    
   ],
   imports: [

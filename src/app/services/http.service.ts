@@ -3,8 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ProductModel } from '../models/Product.model';
 // import { filter } from 'rxjs/operators';
-import { map } from 'rxjs/operators';
-import { ConcatSource } from 'webpack-sources';
 
 @Injectable({
   providedIn: 'root'
@@ -19,27 +17,30 @@ export class HttpService {
 
   getProducts():Observable<any> {
     
-    return this.all_product;
+      return this.all_product;
   }
   
-  getOneProduct(id):any{
+  // getOneProduct(id):any {
+  //    this.all_product.pipe(map(data => {})).subscribe(result => {
+  //     console.log(result)});;
+      //.map(movies => movies.find(movie => movie.id == id));
     //console.log(this.all_product);
-    this.all_product.forEach(element => {
-    //  console.log(element);
-      for(let i=0;i< element.length;i++)
-      {
+    // this.all_product.forEach(element => {
+    // //  console.log(element);
+    //   for(let i=0;i< element.length;i++)
+    //   {
        
-        if(element[i].ProductId===id)
-        { return element[i];}
-      }
+    //     if(element[i].ProductId===id)
+    //     { return element[i];}
+    //   }
     //console.log(element.filter(ele  =>ele.ProductId ===id));
     // let result=element.filter(ele  =>ele.ProductId ===id)[0];
     // console.log("ser",element.filter(ele  =>ele.ProductId ===id)[0]);
     // return result;
       //console.log(element,'element');
       
-    });
-      }
+   // });
+   //   }
     
   
 }

@@ -12,14 +12,7 @@ export class StreamService {
   
   constructor() { }
   //<any[]>([])
-  private cards:BehaviorSubject<ProductModel[]> =new BehaviorSubject([{
-                                                        ProductId:"string",
-                                                        Category: "string",
-                                                        Description: "string",
-                                                        Name:"string",
-                                                        ProductPicUrl :"string",
-                                                        Price:"string",
-                                                      }]) ;
+  private cards:BehaviorSubject<ProductModel[]> =new BehaviorSubject([]);
   
   getcards(): Observable<any> { 
     return this.cards.asObservable(); 

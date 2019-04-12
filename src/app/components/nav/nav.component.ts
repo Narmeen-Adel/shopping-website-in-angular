@@ -25,6 +25,9 @@ export class NavComponent implements OnInit {
   }
   deleteFromCard(item){
     this.shop.removeFromCard(item);
+    this.shop.getcards().subscribe(res=>{
+      this.cardArray=res;
+    });
   }
   deleteFromWishList(item){
     this.stream.removeFromCard(item);

@@ -11,16 +11,12 @@ export class CardService {
 
   constructor() { }
 
-  private cards:BehaviorSubject<object[]> =new BehaviorSubject([
-    {   ProductId:null,
-        Name:"",
-        Price: "string",
-        Count: 0,
-    }
-]) ;
+  private cards:BehaviorSubject<object[]> =new BehaviorSubject([]) ;
 
 getcards(): Observable<any> { 
-return this.cards.asObservable(); 
+console.log(this.cards.pipe(filter(data=> data["count"]!==0)));
+return  this.cards.pipe(filter(data=> data["count"]!==0));
+//this.cards.asObservable(); 
 }
 
 addToCard(item :ProductModel){

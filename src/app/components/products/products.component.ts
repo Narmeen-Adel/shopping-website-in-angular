@@ -8,8 +8,8 @@ import {HttpService} from '../../services/http.service';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-products : ProductModel[];
-  constructor(private query:HttpService) { }
+ products : ProductModel[];
+ constructor(private query:HttpService) { }
 
   ngOnInit() {
     this.query.getProducts().subscribe(products =>this.products =products);
